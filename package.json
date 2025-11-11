@@ -52,6 +52,6 @@
     "@libsql/client": "^0.15.15",
     "discord.js": "^14.22.1",
     "discordx": "^11.13.2",
-    "drizzle-orm": "^0.44.5"
+    "drizzle-orm": "^0.44.7"
   }
 }
