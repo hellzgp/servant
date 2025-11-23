@@ -6,7 +6,7 @@ import {
     GuildMember,
     ApplicationCommandOptionType,
 } from "discord.js";
-import {KickPerm} from "../../guards/punishPerm.js";
+import { KickPerm } from "../../guards/punishPerm.js";
 
 @Discord()
 @Category("Moderation")
@@ -21,7 +21,7 @@ export default class KickCommand {
             name: "member",
             description: "membro para expulsar",
             required: true,
-            type: ApplicationCommandOptionType.Mentionable,
+            type: ApplicationCommandOptionType.User,
         })
         member: GuildMember | null,
         @SlashOption({
@@ -56,7 +56,9 @@ export default class KickCommand {
                 `Eu não tenho permissão de expulsar um membro.`,
             );
         else if (interaction.guild.ownerId == member.id)
-            return interaction.reply(`Você não pode expulsar o dono do servidor.`);
+            return interaction.reply(
+                `Você não pode expulsar o dono do servidor.`,
+            );
         else if (
             interaction.guild?.members.me?.roles.highest.position <= memberRole
         )
@@ -66,7 +68,7 @@ export default class KickCommand {
         )
             return interaction.reply(`Não posso expulsar seu superior.`);
 
-	member.kick(`${author.user.username} | ${reason}`).catch((err) => {
+        member.kick(`${author.user.username} | ${reason}`).catch((err) => {
             console.log(err);
             return interaction.reply(`Não foi possível expulsar ${member}`);
         });

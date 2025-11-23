@@ -6,13 +6,13 @@ import {
     GuildMember,
     ApplicationCommandOptionType,
 } from "discord.js";
-import {BanPerm} from "../../guards/punishPerm.js";
+import { BanPerm } from "../../guards/punishPerm.js";
 
 @Discord()
 @Category("Moderation")
 export default class BanCommand {
     @Slash({
-        name: "banir",
+        name: "ban",
         description: "banir um membro do servidor.",
     })
     @Guard(BanPerm)
@@ -21,7 +21,7 @@ export default class BanCommand {
             name: "member",
             description: "membro para banir",
             required: true,
-            type: ApplicationCommandOptionType.Mentionable,
+            type: ApplicationCommandOptionType.User,
         })
         member: GuildMember | null,
         @SlashOption({

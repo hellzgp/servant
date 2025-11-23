@@ -42,7 +42,9 @@ export const TimeoutPerm: GuardFunction<CommandInteraction> = async (
     next,
 ) => {
     if (
-        !interaction.memberPermissions?.has(PermissionFlagsBits.ModerateMembers) &&
+        !interaction.memberPermissions?.has(
+            PermissionFlagsBits.ModerateMembers,
+        ) &&
         !interaction.memberPermissions?.has(PermissionFlagsBits.Administrator)
     ) {
         await interaction.reply({
