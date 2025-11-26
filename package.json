@@ -45,7 +45,7 @@
     "tsx": "^4.20.6",
     "tsyringe": "^4.10.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.4"
+    "typescript-eslint": "^8.48.0"
   },
   "dependencies": {
     "@discordx/importer": "^1.3.3",
