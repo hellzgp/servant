@@ -44,5 +44,5 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },
-  "exclude": ["node_modules", "dist", "drizzle.config.ts"]
+  "exclude": ["node_modules", "dist"]
 }
